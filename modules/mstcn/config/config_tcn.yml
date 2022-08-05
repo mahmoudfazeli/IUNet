@@ -1,0 +1,25 @@
+module : mstcn.iunet.IUNet
+model : mstcn2.MultiStageModel2
+dataset : cholec80.Cholec80
+out_features : 7
+num_workers : 3
+batch_size : 1
+features_per_seconds : 1
+features_subsampling : 1
+log_every_n_steps : 1
+mstcn_causal_conv : True
+learning_rate : 0.00005
+min_epochs : 1
+max_epochs : 2 #85000
+#mstcn_layers : 5
+mstcn_layers_PG : 11
+mstcn_layers_R: 11
+mstcn_f_maps : 64
+mstcn_f_dim: 2048
+mstcn_stages : 3
+early_stopping_metric : val_acc
+save_top_k : 1
+gpus : ['0']
+data_root : /content/drive/MyDrive/Thesis/IUNet/logs/211002-151302_FeatureExtraction_Cholec80FeatureExtract_cnn_TwoHeadInception3/cholec80_pickle_export
+num_sanity_val_steps: 0
+
